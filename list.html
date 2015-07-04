@@ -1,0 +1,96 @@
+<template name="list">
+
+	<div id="container">
+		<div class="vertical">
+		 	<div class="alert alert-success" role="alert">
+        		<strong>Hi, {{ name }}!</strong> Welcome back to Bill Buddy.
+      		</div>
+
+      	<div id="adjrent">	
+      	<div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Nate's Adjusted Rent</h3>
+            </div>
+            <div class="panel-body">
+              ${{ nar }}
+            </div>
+         </div>
+
+         <div class="panel panel-danger">
+            <div class="panel-heading">
+              <h3 class="panel-title">John's Adjusted Rent</h3>
+            </div>
+            <div class="panel-body">
+              ${{ jar }}
+            </div>
+          </div>
+          </div>
+
+      	<table class="table table-bordered">
+            <caption>Regular Monthly Items</caption>
+            <thead>
+              <tr>
+                <th>Bill</th>
+                <th>Cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Xfinity</td>
+                <td>{{ cable }}</td>
+              </tr>
+              <tr>
+                <td>Eversource (electric)</td>
+                <td>{{ electric }}</td>
+              </tr>
+            </tbody>
+          </table>
+  				
+  		<table class="table table-striped">
+  		<caption>Common Household Goods</caption>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Cost</th>
+              </tr>
+            </thead>
+            <tbody>
+            
+            {{ #each listed }}
+            <tr>
+            <td>{{ who }}</td>
+            <td>{{ item }}</td>
+            <td>${{ cost }}</td>
+            </tr>
+            {{ /each }}
+
+            </tbody>
+          </table>
+
+         <div class="alert alert-info" role="alert">
+        	<form class="add-item">
+          <strong>Add Item:</strong>
+          <input type="text" name="item" />
+          <p><strong class="cost">Cost: </strong>$<input type="text" name="cost" /></p>
+        	<button type="submit" class="btn-lg btn-success">Split it up!</button>
+      	  </form>
+        </div>
+
+        {{ #if isJohn }}
+          <p>Hello, John. Here's some stuff for ya...</p>
+          <form class="admin-cable-electric">
+          <input type="text" name="cable" placeholder="cable" />
+          <input type="text" name="electric" placeholder="electric" />
+          <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+          <p>
+          Is the month over and all bills payed?
+          </p>
+          <button id="reset" type="submit" class="btn-lg btn-danger">Reset Everything!</button>
+        {{ /if }}
+
+		</div>
+	</div>
+
+</template>

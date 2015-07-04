@@ -1,0 +1,28 @@
+/* CSS declarations go here */
+
+#container > .vertical > button { margin-bottom:10px; width:90%;}
+#container > div > table > thead > tr > th { text-align:center;}
+#container > div > table.table.table-bordered > thead > tr > th:nth-child(1) { width:25%;}
+.panel { float:left; width:30%; margin-left:5px; margin-right:5px; margin-bottom:20px; }
+.cost { margin-right:14px; margin-left:4px; }
+#container > div > div.alert.alert-info > input[type="text"] { margin-bottom:10px;}
+#container > div > div.alert.alert-info > form > button { margin-top:10px;}
+p { margin-top:10px;}
+
+#container {
+	width:100%;
+ 	vertical-align:middle;
+ 	text-align:center;
+ }
+
+.vertical {
+	width:100%;
+  }
+
+caption { font-weight:bold; font-size:1.2em; padding-left:15px; }
+
+#adjrent {
+	width:100%;
+	margin-right:23%;
+	margin-left:20%;
+}
